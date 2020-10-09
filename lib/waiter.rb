@@ -25,6 +25,14 @@ class Waiter
     best_tipped_meal.customer
   end
 
+  def most_frequent
+    frequencies = meals.each_with_object(Hash.new(0)) do |meal, hash|
+      hash[meal.customer] += 1
+    end
+    binding.pry
+    puts customer.name
+  end
+
   def self.all
     @@all
   end
